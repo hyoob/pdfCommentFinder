@@ -1,0 +1,9 @@
+#! /bin/bash 
+
+# for x in *.pdf; do pdftotext "$x" "-" | grep $1 | awk -v file="$x" '{print "***" file "***" "\n" $0 "\n"}'; done
+
+# iconv -f "windows-1252" -t "UTF-8" res.txt | grep était
+
+find . -name '*.pdf' -print0 | xargs -0 -I{} sh -c "python ~/Applications/yoFinder/test.py \"{}\" | iconv -f \"windows-1252\" -t \"UTF-8\" | grep \"$1\" | awk '{print \"***\" \"{}\" \"***\" \"\\n\" \$0 \"\\n\"}'"
+
+# for x in *.pdf; do python ~/Applications/yoFinder/test.py "$x"; done 
