@@ -48,6 +48,8 @@ for pdf in pdf_files:
 		for result in matchResults:
 			finalIndex = result.find(stringToLookFor)
 			print(" " + "-" * (len(result)+6)) 
-			print("|   " + result[0:finalIndex] + bcolors.FAIL + result[finalIndex:finalIndex+len(stringToLookFor)] + bcolors.ENDC + result[finalIndex+len(stringToLookFor):len(result)] + "   |")
+			print("|   " + result[0:finalIndex] +
+				bcolors.FAIL + result[finalIndex:finalIndex+len(stringToLookFor)] + bcolors.ENDC + 
+				result[finalIndex+len(stringToLookFor):len(result)] + "   |")
 			print(" " + "-" * (len(result)+6)) 
 		print("")
